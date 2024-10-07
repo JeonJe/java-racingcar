@@ -25,8 +25,8 @@ public class Position {
         return new Position(DEFAULT_POSITION);
     }
 
-    public int increase() {
-        return this.value + DEFAULT_INCREMENT;
+    public Position increase() {
+        return new Position(this.value + DEFAULT_INCREMENT);
     }
 
     public Position createMaxPosition(Position otherPosition) {

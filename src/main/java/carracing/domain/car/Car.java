@@ -23,7 +23,7 @@ public class Car {
 
     public Car move(MoveStrategy strategy) {
         if (strategy.isMovable()) {
-            Position increasedPosition = Position.from(position.increase());
+            Position increasedPosition = position.increase();
             return new Car(name, increasedPosition);
         }
         return new Car(name, position);

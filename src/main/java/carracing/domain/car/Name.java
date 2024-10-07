@@ -11,14 +11,13 @@ public class Name {
     private final String value;
 
     private Name(String value) {
+        if (StringUtil.isBlank(value) || value.length() > ALLOWED_MAXIMUM_NAME_LENGTH) {
+            throw RacingCarIllegalArgumentException.INVALID_NAME_LENGTH;
+        }
         this.value = value;
     }
 
     public static Name from(String name) {
-        if (StringUtil.isBlank(name) || name.length() > ALLOWED_MAXIMUM_NAME_LENGTH) {
-            throw RacingCarIllegalArgumentException.INVALID_NAME_LENGTH;
-        }
-
         return new Name(name);
     }
 

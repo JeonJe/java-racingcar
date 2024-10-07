@@ -26,9 +26,9 @@ class PositionTest {
 
         Position position = Position.create();
 
-        int result = position.increase();
+        Position result = position.increase();
 
-        assertThat(result).isEqualTo(2);
+        assertThat(result).isEqualTo(Position.from(2));
     }
 
 
