@@ -6,6 +6,7 @@ import carracing.domain.move.MoveStrategy;
 import carracing.domain.record.RoundRecord;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -29,7 +30,7 @@ public class Race {
     public List<RoundRecord> start() {
         recordRound();
         startRounds();
-        return roundRecords;
+        return Collections.unmodifiableList(roundRecords);
     }
 
     private void startRounds() {
